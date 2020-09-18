@@ -6,7 +6,19 @@ export default  class SortingVisualiser extends React.Component{
         super(props);
 
         this.state = {
-            array :[],
+            array: [],
         };
+    }
+
+    componentDidMount(){
+        this.resetArray();
+    }
+
+    resetArray(){
+        const array = [];
+        for(let i =0; i < 100 ; i++){
+            array.push(randomIntFromInterval(5, 1000));
+        }
+        this.setState({array});
     }
 }
